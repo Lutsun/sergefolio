@@ -1,0 +1,148 @@
+.skills-section {
+  padding: 4rem 0;
+  background-color: var(--light-bg);
+}
+
+.dark .skills-section {
+  background-color: var(--dark-bg);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--light-text);
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background-color: var(--light-accent);
+  bottom: -10px;
+  left: 25%;
+}
+
+.dark .section-header h2 {
+  color: var(--dark-text);
+}
+
+.dark .section-header h2::after {
+  background-color: var(--dark-accent);
+}
+
+.skills-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.skills-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  padding: 1.5rem 1rem;
+  background-color: var(--light-card);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.dark .skill-item {
+  background-color: var(--dark-card);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--light-accent);
+}
+
+.dark .skill-icon {
+  color: var(--dark-accent);
+}
+
+.skill-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--light-text);
+}
+
+.dark .skill-name {
+  color: var(--dark-text);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .skill-item {
+    min-width: 100px;
+    padding: 1rem 0.5rem;
+  }
+  
+  .skill-icon {
+    font-size: 2rem;
+  }
+  
+  .skill-name {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-section {
+    padding: 3rem 0;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .skills-track {
+    gap: 1rem;
+  }
+  
+  .skill-item {
+    min-width: 80px;
+    padding: 0.8rem 0.3rem;
+  }
+  
+  .skill-icon {
+    font-size: 1.5rem;
+  }
+  
+  .skill-name {
+    font-size: 0.8rem;
+  }
+}

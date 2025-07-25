@@ -1,0 +1,172 @@
+.hero {
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.img-container {
+  width: 420px;
+  height: 415px;
+  border-radius: 50%;
+  border: 3px solid var(--light-accent);
+  padding: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark .img-container {
+  border-color: var(--dark-accent);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajuste l'image pour couvrir le conteneur */
+  object-position: center top; /* Ajuste ceci selon ta préférence */
+  border-radius: 50%;
+ 
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero h1 span {
+  color: var(--light-accent);
+}
+
+.dark .hero h1 span {
+  color: var(--dark-accent);
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--light-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.dark .hero h2 {
+  color: var(--dark-text);
+}
+
+.lead {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  color: var(--light-secondary);
+}
+
+.dark .lead {
+  color: var(--dark-text);
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-outline {
+  border: 2px solid var(--light-accent);
+  color: var(--light-accent);
+  background: transparent;
+}
+
+.dark .btn-outline {
+  border-color: var(--dark-accent);
+  color: var(--dark-accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--light-accent);
+  color: white;
+}
+
+.dark .btn-outline:hover {
+  background-color: var(--dark-accent);
+  color: white;
+}
+
+@media (max-width: 992px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .hero-cta {
+    justify-content: center;
+  }
+  
+  .lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .img-container {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding-top: 6rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero h2 {
+    font-size: 1.25rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .img-container {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* Spécifique pour iPhone 14 Pro (390px de large) */
+@media (max-width: 390px) {
+  .hero {
+    padding-top: 5rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .img-container {
+    width: 200px;
+    height: 200px;
+  }
+}

@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+:root {
+  /* Light Mode (version futuriste mais professionnelle) */
+  --light-bg: #f8f9fa;        /* Garde ton fond clair */
+  --light-text: #212529;      /* Texte sombre */
+  --light-primary: #ff003c;   /* Bleu foncé (peut rester) */
+  --light-secondary: #5e2750; /* Violet profond (nouveau) */
+  --light-accent: #e63946;    /* Rouge vif mais lisible */
+  --light-card: #ffffff;      /* Cartes blanches */
+  --light-neon-effect: rgba(230, 57, 70, 0.2); /* Pour effets glow */
+
+  /* Dark Mode (Cyberpunk Rouge) */
+  --dark-bg: #121212;         /* Fond sombre */
+  --dark-text: #f0f0f0;       /* Texte légèrement plus froid */
+  --dark-primary: #ff003c;    /* Rouge néon intense */
+  --dark-secondary: #990030;  /* Rouge profond pour contraste */
+  --dark-accent: #ff3366;     /* Rose néon pour accents */
+  --dark-card: #1a1a1a;       /* Cartes légèrement plus claires */
+  --dark-neon-effect: rgba(255, 0, 60, 0.3); /* Glow rouge */
+
+  
+  /* Commun */
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
 }
 
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  transition: var(--transition);
+}
+
+.app.light {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+.app.dark {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 6rem 0;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--light-accent);
   color: white;
+  border: 2px solid var(--light-accent);
 }
 
-.App-link {
-  color: #61dafb;
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--light-accent);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.dark .btn-primary {
+  background-color: var(--dark-accent);
+  border-color: var(--dark-accent);
+}
+
+.dark .btn-primary:hover {
+  background-color: transparent;
+  color: var(--dark-accent);
+}
+
+.card {
+  background: var(--light-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.dark .card {
+  background: var(--dark-card);
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 4rem 0;
   }
-  to {
-    transform: rotate(360deg);
-  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
 }
