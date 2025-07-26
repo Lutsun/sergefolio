@@ -1,3 +1,4 @@
+/* Styles Desktop existants - inchangés */
 .header {
   position: fixed;
   top: 0;
@@ -34,9 +35,6 @@
   transition: var(--transition);
 }
 
-.dark .logo {
-  color: #ff003c;
-}
 .dark .logo span {
   color: white;
 }
@@ -105,4 +103,173 @@
 
 .dark .theme-toggle:hover {
   color: var(--dark-accent);
+}
+
+
+/* ... (conservez tous vos styles desktop existants) ... */
+
+/* Styles Mobile seulement */
+@media (max-width: 768px) {
+  .header-content {
+    justify-content: center;
+    position: relative;
+  }
+  
+  .mobile-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .nav {
+    display: none;
+  }
+  
+  /* Bouton Hamburger stylé */
+  .mobile-menu-btn {
+    position: absolute;
+    left: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .menu-icon {
+    color: var(--light-primary);
+    font-size: 1.8rem;
+    transition: var(--transition);
+  }
+  
+  .dark .menu-icon {
+    color: var(--dark-primary);
+  }
+  
+  .mobile-menu-btn:hover .menu-icon {
+    transform: scale(1.1);
+    color: var(--light-accent);
+  }
+  
+  .dark .mobile-menu-btn:hover .menu-icon {
+    color: var(--dark-accent);
+  }
+  
+  /* Sidebar moderne */
+  .mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background: var(--light-card);
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 1.5rem 2rem;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .dark .mobile-sidebar {
+    background: var(--dark-card);
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .mobile-sidebar.open {
+    left: 0;
+  }
+  
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+  }
+  
+  .sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+  }
+  
+  .dark .sidebar-nav a {
+    color: var(--dark-text);
+  }
+  
+  .sidebar-nav a:hover {
+    background: rgba(255, 0, 60, 0.1);
+    color: var(--light-accent);
+  }
+  
+  .dark .sidebar-nav a:hover {
+    background: rgba(255, 0, 60, 0.2);
+    color: var(--dark-accent);
+  }
+  
+  .nav-icon {
+    font-size: 1.3rem;
+    min-width: 24px;
+  }
+  
+  .sidebar-theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: none;
+    border: none;
+    color: var(--light-text);
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    margin-top: auto;
+    transition: var(--transition);
+  }
+  
+  .dark .sidebar-theme-toggle {
+    color: var(--dark-text);
+  }
+  
+  .sidebar-theme-toggle:hover {
+    background: rgba(255, 0, 60, 0.1);
+  }
+  
+  .dark .sidebar-theme-toggle:hover {
+    background: rgba(255, 0, 60, 0.2);
+  }
+  
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(5px);
+  }
+}
+
+/* Optimisation iPhone */
+@media (max-width: 430px) {
+  .mobile-sidebar {
+    width: 260px;
+    padding: 5rem 1.25rem 1.5rem;
+  }
+  
+  .sidebar-nav {
+    gap: 1.25rem;
+  }
 }
