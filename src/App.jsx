@@ -9,7 +9,7 @@ import Stats from './components/Stats';
 // import Contact from './components/Contact';
 import Footer from './components/Footer';
 // import Widgets from './components/WidgetsPanel';
-// import WidgetsPanel from './components/WidgetsPanel';
+import WidgetsPanel from './components/WidgetsPanel';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -20,10 +20,12 @@ const App = () => {
       <main>
         <Hero />
         <Stats />
-        {/* <WidgetsPanel/> */}
-        {/* <About /> */}
         <Skills />
-        <Projects />  
+        <Projects />
+        <WidgetsPanel/>
+        {/* <About /> */}
+        
+          
         {/* <Contact /> */}
       </main>
       <Footer />

@@ -1,625 +1,299 @@
-/* styles/widgets.css */
-.widgets-section {
-  padding: 5rem 0;
-  background-color: var(--light-bg);
-  position: relative;
-  overflow: hidden;
-}
-
-.dark .widgets-section {
-  background-color: var(--dark-bg);
-}
-
-.widgets-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    var(--light-neon-effect) 0%,
-    transparent 50%,
-    var(--light-neon-effect) 100%
-  );
-  opacity: 0.1;
-  pointer-events: none;
-}
-
-.dark .widgets-section::before {
-  background: linear-gradient(
-    135deg,
-    var(--dark-neon-effect) 0%,
-    transparent 50%,
-    var(--dark-neon-effect) 100%
-  );
-}
-
-.widgets-grid {
+/* Base Styles */
+.widget-panel {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: minmax(200px, auto);
-  gap: 1.5rem;
-  grid-auto-flow: dense;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  max-width: 1800px;
+  margin: 0 auto;
+  overflow-x: auto;
+  scrollbar-width: none; /* Pour Firefox */
+  -ms-overflow-style: none; /* Pour IE et Edge */
 }
 
-.widget {
+.widget-panel::-webkit-scrollbar {
+  display: none; /* Pour Chrome, Safari et Opera */
+}
+
+.widget-card {
   background: var(--light-card);
-  border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  overflow: hidden;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
 }
 
-.dark .widget {
+.dark .widget-card {
   background: var(--dark-card);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.widget::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border-radius: 18px;
-  background: linear-gradient(
-    45deg,
-    var(--light-primary),
-    var(--light-accent),
-    var(--light-primary)
-  );
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.dark .widget::after {
-  background: linear-gradient(
-    45deg,
-    var(--dark-primary),
-    var(--dark-accent),
-    var(--dark-primary)
-  );
-}
-
-.widget:hover::after {
-  opacity: 0.3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .widget-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  gap: 10px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .dark .widget-header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .widget-header h3 {
-  font-size: 1.25rem;
+  font-size: 15px;
+  font-weight: 600;
   margin: 0;
-  color: var(--light-primary);
+  letter-spacing: 0.5px;
+  color: var(--light-text);
 }
 
 .dark .widget-header h3 {
-  color: var(--dark-primary);
-}
-
-/* Widget spécifiques */
-.spotify-widget {
-  grid-column: span 2;
-}
-
-.quote-widget {
-  grid-row: span 2;
-}
-
-.weather-widget {
-  grid-column: span 1;
-}
-
-.coding-widget {
-  grid-column: span 2;
-}
-
-.github-widget {
-  grid-row: span 2;
-}
-
-.terminal-widget {
-  grid-column: span 2;
-}
-
-/* Styles pour le widget Spotify */
-.spotify-content {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-.album-cover {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.album-cover img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.vinyl {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, #333, #111);
-  border: 2px solid #555;
-  z-index: 2;
-}
-
-.track-info {
-  flex: 1;
-}
-
-.track-info h4 {
-  margin: 0 0 0.25rem 0;
-  font-size: 1.25rem;
-}
-
-.track-info p {
-  margin: 0 0 1rem 0;
-  color: var(--light-secondary);
-  opacity: 0.8;
-}
-
-.dark .track-info p {
-  color: var(--dark-secondary);
-}
-
-.progress-bar {
-  height: 4px;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-  margin: 1rem 0;
-  overflow: hidden;
-}
-
-.dark .progress-bar {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.progress {
-  height: 100%;
-  width: 65%;
-  background: var(--light-accent);
-  border-radius: 2px;
-}
-
-.dark .progress {
-  background: var(--dark-accent);
-}
-
-.player-controls {
-  display: flex;
-  gap: 1rem;
-}
-
-.player-controls button {
-  background: none;
-  border: none;
-  font-size: 1.25rem;
-  cursor: pointer;
-  color: var(--light-text);
-  transition: transform 0.2s ease;
-}
-
-.dark .player-controls button {
   color: var(--dark-text);
 }
 
-.player-controls button:hover {
-  transform: scale(1.1);
-  color: var(--light-accent);
-}
-
-.dark .player-controls button:hover {
-  color: var(--dark-accent);
-}
-
-.pulse-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--light-accent);
-  box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
-  animation: pulse 1.5s infinite;
-}
-
-.dark .pulse-dot {
-  background: var(--dark-accent);
-  box-shadow: 0 0 0 0 rgba(255, 0, 60, 0.7);
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 currentColor;
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 10px transparent;
-  }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 currentColor;
-  }
-}
-
-/* Styles pour le widget Citation */
-.quote-content {
-  height: calc(100% - 3rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.quote-text {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.quote-text::before {
-  content: '"';
-  position: absolute;
-  left: 0;
-  top: -0.5rem;
-  font-size: 3rem;
-  opacity: 0.2;
-  color: var(--light-accent);
-}
-
-.dark .quote-text::before {
-  color: var(--dark-accent);
-}
-
-.quote-author {
-  align-self: flex-end;
-  font-style: italic;
-  opacity: 0.8;
-}
-
-/* Styles pour le widget Météo */
-.weather-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: calc(100% - 3rem);
-}
-
-.weather-main {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.weather-icon {
-  font-size: 3rem;
-}
-
-.weather-temp {
-  font-size: 2.5rem;
-  font-weight: 600;
-}
-
-.weather-condition {
-  font-size: 1.1rem;
-  margin-bottom: 0.25rem;
-}
-
-.weather-location {
-  opacity: 0.8;
-  margin-bottom: 1rem;
-}
-
-.weather-details {
-  display: flex;
-  gap: 1rem;
-  font-size: 0.9rem;
-  opacity: 0.7;
-}
-
-/* Styles pour le widget Coding Activity */
-.coding-content {
-  height: calc(100% - 3rem);
-}
-
-.coding-stats {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.stat {
-  text-align: center;
-}
-
-.stat-value {
-  font-size: 2rem;
-  font-weight: 600;
-  display: block;
+.widget-icon {
+  font-size: 16px;
   color: var(--light-primary);
 }
 
-.dark .stat-value {
+.dark .widget-icon {
   color: var(--dark-primary);
 }
 
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.8;
+/* Bio Matrix */
+.bio-content p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-size: 14px;
+  color: var(--light-text);
 }
 
-.lang-stats {
+.dark .bio-content p {
+  color: var(--dark-text);
+}
+
+.bio-details {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 8px;
+  margin-top: auto;
 }
 
-.lang-bar {
+.detail-item {
+  display: flex;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.detail-label {
+  font-weight: 500;
+  color: var(--light-primary);
+}
+
+.dark .detail-label {
+  color: var(--dark-primary);
+}
+
+/* Thought Widget */
+.thought-content p {
+  font-style: italic;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-size: 14px;
+  color: var(--light-text);
+}
+
+.dark .thought-content p {
+  color: var(--dark-text);
+}
+
+.thought-time {
+  font-size: 13px;
+  color: var(--light-primary);
+  text-align: right;
+  margin-top: auto;
+}
+
+.dark .thought-time {
+  color: var(--dark-primary);
+}
+
+/* Social Widget */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.03);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.dark .social-item {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.social-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark .social-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon {
+  font-size: 18px;
+}
+
+.social-item span {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--light-text);
+}
+
+.dark .social-item span {
+  color: var(--dark-text);
+}
+
+.social-item.twitter {
+  color: #1DA1F2;
+}
+
+.social-item.linkedin {
+  color: #0077B5;
+}
+
+.social-item.github {
+  color: #333;
+}
+
+.dark .social-item.github {
+  color: #f5f5f5;
+}
+
+.social-item.instagram {
+  color: #E1306C;
+}
+
+/* XO Game */
+.game-status {
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--light-text);
+}
+
+.dark .game-status {
+  color: var(--dark-text);
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.square {
+  aspect-ratio: 1;
+  min-height: 40px;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  color: var(--light-text);
 }
 
-.lang-bar span {
-  min-width: 80px;
-  font-size: 0.9rem;
+.dark .square {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--dark-text);
 }
 
-.bar-container {
-  flex: 1;
-  height: 8px;
+.square:hover:not(:disabled) {
   background: rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
 }
 
-.dark .bar-container {
+.dark .square:hover:not(:disabled) {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.bar {
-  height: 100%;
-  background: var(--light-accent);
-  border-radius: 4px;
+.square:disabled {
+  cursor: not-allowed;
 }
 
-.dark .bar {
-  background: var(--dark-accent);
-}
-
-/* Styles pour le widget GitHub */
-.github-content {
-  height: calc(100% - 3rem);
-  display: flex;
-  flex-direction: column;
-}
-
-.github-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.github-stat {
-  text-align: center;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-}
-
-.dark .github-stat {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.stat-number {
-  font-size: 1.5rem;
-  font-weight: 600;
-  display: block;
+.square.X {
   color: var(--light-primary);
 }
 
-.dark .stat-number {
+.dark .square.X {
   color: var(--dark-primary);
 }
 
-.stat-label {
-  font-size: 0.8rem;
-  opacity: 0.8;
+.square.O {
+  color: var(--light-secondary);
 }
 
-.github-graph {
-  flex: 1;
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.dark .square.O {
+  color: var(--dark-secondary);
 }
 
-.dark .github-graph {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.graph-placeholder {
+.reset-btn {
   width: 100%;
-  height: 100px;
-  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
-  border-radius: 4px;
-}
-
-.dark .graph-placeholder {
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-}
-
-.github-link {
-  display: block;
-  text-align: center;
-  padding: 0.75rem;
-  background: var(--light-primary);
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
   font-weight: 500;
-  transition: all 0.3s ease;
+  font-size: 14px;
+  color: var(--light-text);
+  margin-top: auto;
 }
 
-.dark .github-link {
-  background: var(--dark-primary);
+.dark .reset-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--dark-text);
 }
 
-.github-link:hover {
-  background: var(--light-secondary);
+.reset-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
 }
 
-.dark .github-link:hover {
-  background: var(--dark-secondary);
+.dark .reset-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
-/* Styles pour le widget Terminal */
-.terminal-widget {
-  background: #1e1e1e;
-  color: #00ff00;
-  font-family: 'Courier New', monospace;
-}
-
-.dark .terminal-widget {
-  background: #121212;
-}
-
-.terminal-header {
-  border-bottom: 1px solid #333;
-}
-
-.terminal-controls {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.control-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-
-.control-dot.red {
-  background: #ff5f56;
-}
-
-.control-dot.yellow {
-  background: #ffbd2e;
-}
-
-.control-dot.green {
-  background: #27c93f;
-}
-
-.terminal-content {
-  padding: 1rem 0;
-  height: calc(100% - 3rem);
-}
-
-.terminal-line {
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-}
-
-.prompt {
-  color: #00ff00;
-  margin-right: 0.5rem;
-}
-
-.command {
-  color: #ffffff;
-}
-
-.output {
-  color: #00ff00;
-  opacity: 0.8;
-  margin-left: 1.5rem;
-}
-
-.blink {
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .widgets-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-  
-  .spotify-widget,
-  .coding-widget,
-  .terminal-widget {
-    grid-column: span 1;
-  }
-}
-
+/* Responsive Styles (optionnel pour mobile) */
 @media (max-width: 768px) {
-  .widgets-section {
-    padding: 3rem 0;
+  .widget-panel {
+    grid-template-columns: repeat(4, 220px);
+    padding: 12px;
   }
   
-  .spotify-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .player-controls {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .widgets-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .coding-stats,
-  .github-stats {
-    grid-template-columns: 1fr;
+  .widget-card {
+    padding: 12px;
   }
 }
