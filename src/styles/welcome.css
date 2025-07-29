@@ -1,0 +1,90 @@
+.cyber-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0a0514;
+  z-index: 1000;
+}
+
+.cyber-content {
+  text-align: center;
+  padding: 0 20px;
+  max-width: 90%;
+}
+
+.cyber-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  line-height: 1.2;
+}
+
+.cyber-accent {
+  color: #ff003c;
+  text-shadow: 0 0 15px #ff003c;
+  display: inline-block;
+  margin-left: 0.1em;
+}
+
+.cyber-btn {
+  background: transparent;
+  border: 2px solid #ff003c;
+  color: white;
+  padding: 0.8rem 2rem;
+  font-size: 0.9rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 0, 60, 0.4), 
+    transparent);
+  transition: 0.5s;
+}
+
+.cyber-btn:hover::before {
+  left: 100%;
+}
+
+.cyber-btn:hover {
+  background: rgba(255, 0, 60, 0.2);
+  box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
+}
+
+@media (max-width: 768px) {
+  .cyber-title {
+    font-size: 1.8rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cyber-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+  }
+}
