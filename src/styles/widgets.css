@@ -170,11 +170,15 @@
   color: var(--dark-text);
 }
 
+.social-item.mail {
+  color: #6c63ff;
+}
+
 .social-item.twitter {
   color: #1DA1F2;
 }
 
-.social-item.linkedin {
+.social-item.discord {
   color: #0077B5;
 }
 
@@ -188,6 +192,63 @@
 
 .social-item.instagram {
   color: #E1306C;
+}
+
+/* Ajouts pour la météo et le texte "Follow me" */
+.weather-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 12px 0;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+}
+
+.dark .weather-info {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.weather-icon-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.weather-icon {
+  font-size: 24px;
+  color: var(--light-primary);
+}
+
+.dark .weather-icon {
+  color: var(--dark-primary);
+}
+
+.weather-temp {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.weather-location {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.follow-text {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: var(--light-text);
+  text-align: center;
+}
+
+.dark .follow-text {
+  color: var(--dark-text);
+}
+
+.social-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 /* XO Game */
@@ -297,3 +358,5 @@
     padding: 12px;
   }
 }
+
+ 

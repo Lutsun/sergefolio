@@ -1,14 +1,95 @@
 import React, { useState, useEffect } from 'react';
-import { FiUser, FiZap, FiShare2 } from 'react-icons/fi';
-import { FaTwitter, FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa';
+import { FiUser, FiZap, FiShare2, FiMail } from 'react-icons/fi';
+import { FaTwitter, FaLinkedinIn, FaGithub, FaInstagram, FaXing, FaAirbnb, FaAngular, FaTwitch, FaWhatsapp, FaAws, FaTwitterSquare, FaDiscord, FaMailBulk, FaVoicemail, FaMailchimp } from 'react-icons/fa';
+import { WiDaySunny, WiRain, WiCloudy, WiDayHaze } from 'react-icons/wi';
 import '../styles/widgets.css';
 
 const WidgetsPanel = () => {
   const [xoGame, setXoGame] = useState(Array(9).fill(null));
   const [isPlayerTurn, setIsPlayerTurn] = useState(true);
   const [gameStatus, setGameStatus] = useState('Your turn (X)');
+  const [weather, setWeather] = useState({
+    temp: '--',
+    condition: 'clear',
+    location: 'Dakar, Sénégal'
+  });
 
-  // Logique du jeu XO
+  // Daily thoughts
+  const dailyThoughts = [
+    "Code is poetry, but debugging is the editor's nightmare.",
+    "The best error message is the one that never shows up.",
+    "Artificial Intelligence is the future, and the future is now.",
+    "Clean code is like a love letter to your future self.",
+    "In a world of ones and zeros, be the algorithm that makes a difference."
+  ];
+ // Génère un index basé sur la date du jour
+  const getDailyThoughtIndex = () => {
+    const today = new Date();
+    const dayOfYear = Math.floor(
+      (today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24)
+    );
+    return dayOfYear % dailyThoughts.length;
+  };
+
+  const [currentThought, setCurrentThought] = useState(
+    dailyThoughts[getDailyThoughtIndex()]
+  );
+
+  // Rafraîchir manuellement la pensée
+  const refreshThought = () => {
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * dailyThoughts.length);
+    } while (dailyThoughts[newIndex] === currentThought);
+    
+    setCurrentThought(dailyThoughts[newIndex]);
+  };
+
+  // Fetch weather data (à remplacer par ton appel API réel)
+  useEffect(() => {
+    const fetchWeather = async () => {
+      try {
+      
+        const response = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=Dakar,SN&units=metric&appid=25662924f4d0193b20a831fdfd92a6cf`
+        );
+        const data = await response.json();
+        
+        const weatherConditions = {
+          'clear': 'clear',
+          'clouds': 'cloudy',
+          'rain': 'rain',
+          'thunderstorm': 'rain',
+          'drizzle': 'rain',
+          'haze': 'haze',
+          'mist': 'haze'
+        };
+
+        setWeather({
+          temp: Math.round(data.main.temp),
+          condition: weatherConditions[data.weather[0].main.toLowerCase()] || 'clear',
+          location: 'Dakar, Sénégal'
+        });
+        
+      } catch (error) {
+        console.error("Error fetching weather:", error);
+      }
+    };
+
+    fetchWeather();
+  }, []);
+
+  const getWeatherIcon = () => {
+    switch(weather.condition) {
+      case 'rain': return <WiRain className="weather-icon" />;
+      case 'cloudy': return <WiCloudy className="weather-icon" />;
+      case 'haze': return <WiDayHaze className="weather-icon" />;
+      default: return <WiDaySunny className="weather-icon" />;
+    }
+  };
+
+
+   // Logique du jeu XO
   const calculateWinner = (squares) => {
     const lines = [
       [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
@@ -97,8 +178,7 @@ const WidgetsPanel = () => {
           <p>
             Passionate full-stack developer with a focus on creating immersive digital experiences. 
             I blend creativity with technical skills to build innovative web solutions. 
-            My approach combines aesthetic design with robust functionality.Even if my real Passion 
-            is Artificial Intelligence, I'm sure that this new technology will revolutionize the world.
+            My approach combines aesthetic design with robust functionality.
           </p>
           <div className="bio-details">
             <div className="detail-item">
@@ -113,17 +193,23 @@ const WidgetsPanel = () => {
         </div>
       </div>
 
-      {/* Thought of the Day */}
+      {/* Thought of the Day avec Météo */}
       <div className="widget-card thought-widget">
         <div className="widget-header">
           <FiZap className="widget-icon" />
           <h3>DAILY THOUGHT</h3>
         </div>
         <div className="thought-content">
-          <p>
-            "The most powerful tool we have as developers is not our code editor, 
-            but our ability to solve problems creatively."
-          </p>
+          <p>"{dailyThoughts[new Date().getDay()]}"</p>
+          <div className="weather-info">
+            <div className="weather-icon-container">
+              {getWeatherIcon()}
+              <span className="weather-temp">{weather.temp}°C</span>
+            </div>
+            <div className="weather-location">
+              {weather.location}
+            </div>
+          </div>
           <div className="thought-time">
             {new Date().toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' })}
           </div>
@@ -136,23 +222,30 @@ const WidgetsPanel = () => {
           <FiShare2 className="widget-icon" />
           <h3>CONNECT</h3>
         </div>
-        <div className="social-grid">
-          <a href="#" className="social-item twitter">
-            <FaTwitter className="social-icon" />
-            <span>Twitter</span>
-          </a>
-          <a href="#" className="social-item linkedin">
-            <FaLinkedinIn className="social-icon" />
-            <span>LinkedIn</span>
-          </a>
-          <a href="#" className="social-item github">
-            <FaGithub className="social-icon" />
-            <span>GitHub</span>
-          </a>
-          <a href="#" className="social-item instagram">
-            <FaInstagram className="social-icon" />
-            <span>Instagram</span>
-          </a>
+        <div className="social-content">
+          <p className="follow-text">Follow me here !</p>
+          <div className="social-grid">
+             <a href="mailto:sergedasylva0411@gmail.com" className="social-item mail">
+              <FiMail className="social-icon" />
+              <span>Gmail</span>
+            </a>
+            <a href="https://x.com/sylva_serge" className="social-item twitter">
+              <FaTwitter className="social-icon" />
+              <span>Twitter</span>
+            </a>
+            <a href="https://discord.com/users/1400134466701103245" className="social-item discord">
+              <FaDiscord className="social-icon" />
+              <span>Discord</span>
+            </a>
+            <a href="https://github.com/Lutsun" className="social-item github">
+              <FaGithub className="social-icon" />
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.instagram.com/s04.da/?next=%2F" className="social-item instagram">
+              <FaInstagram className="social-icon" />
+              <span>Instagram</span>
+            </a>
+          </div>
         </div>
       </div>
 
