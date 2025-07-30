@@ -23,9 +23,10 @@ const App = () => {
       <main>
         <Hero />
         <Stats />
+        <WidgetsPanel/>
         <Skills />
         <Projects />
-        <WidgetsPanel/>
+        
       </main>
       <Footer />
     </div>
