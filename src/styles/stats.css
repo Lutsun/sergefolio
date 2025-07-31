@@ -1,7 +1,7 @@
 .stats {
   background-color: var(--dark-bg); /* Utilise ta couleur de fond sombre existante */
   color: white;
-  padding: 4rem 1rem;
+  padding: 1rem 1rem;
   position: relative;
   text-align: center;
 }
@@ -15,7 +15,7 @@
   height: 100%;
   background: linear-gradient(
     135deg, 
-    rgba(255, 0, 60, 0.05) 0%, /* Rouge cyberpunk très subtil */
+    rgba(255, 0, 60, 0.05) 0%, 
     rgba(255, 0, 60, 0) 100%
   );
   z-index: 0;
@@ -54,7 +54,7 @@
 
 /* Animation au survol */
 .stat-card:hover h3 {
-  text-shadow: 0 0 10px rgba(255, 0, 60, 0.5); /* Lueur rouge cyberpunk */
+  text-shadow: 0 0 10px rgba(255, 0, 60, 0.5); 
 }
 
 /* Responsive */
@@ -86,3 +86,31 @@
     font-size: 2.5rem;
   }
 }
+@media (max-width: 1200px) {
+  .stats {
+    padding: 2rem 1rem;
+  }
+  
+  .stat-card h3 {
+    font-size: 2.5rem;
+  }
+  
+  .stat-card p {
+    font-size: 0.9rem;
+  }
+  
+}
+@media (max-width: 992px) {
+  .stats {
+    padding: 1.5rem 1rem;
+  }
+  
+  .stat-card h3 {
+    font-size: 2.2rem;
+  }
+  
+  .stat-card p {
+    font-size: 0.85rem;
+  }
+}
+

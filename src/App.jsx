@@ -3,11 +3,13 @@ import './App.css';
 import WelcomeScreen from './components/WelcomeScreen';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import Stats from './components/Stats';
+import WidgetsPanel from './components/WidgetsPanel';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import Stats from './components/Stats';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
-import WidgetsPanel from './components/WidgetsPanel';
+
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -23,10 +25,11 @@ const App = () => {
       <main>
         <Hero />
         <Stats />
+        <br/> <br/>
         <WidgetsPanel/>
         <Skills />
         <Projects />
-        
+        <Contact />
       </main>
       <Footer />
     </div>

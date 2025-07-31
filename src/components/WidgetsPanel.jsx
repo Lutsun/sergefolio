@@ -175,10 +175,10 @@ const WidgetsPanel = () => {
           <h3>ABOUT ME</h3>
         </div>
         <div className="bio-content">
-          <p>
-            Passionate full-stack developer with a focus on creating immersive digital experiences. 
-            I blend creativity with technical skills to build innovative web solutions. 
-            My approach combines aesthetic design with robust functionality.
+          <p>Passionate full-stack developer with a focus on creating immersive digital experiences. </p>
+            <p> Even if my real Passion is Artificial Intelligence, I'm sure that this new technology will revolutionize 
+            the world.Apart from tech, I am a fan of action movies,video games, cars and football. I give you a hint of my favorite club :
+            <br/> Mes Que un club !
           </p>
           <div className="bio-details">
             <div className="detail-item">
@@ -200,9 +200,21 @@ const WidgetsPanel = () => {
           <h3>DAILY THOUGHT</h3>
         </div>
         <div className="thought-content">
-          <p>"{dailyThoughts[new Date().getDay()]}"</p>
+          <p>"{dailyThoughts[new Date().getDay()]}"
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+          </p>
           <div className="weather-info">
             <div className="weather-icon-container">
+              <br />
+              <br />
               {getWeatherIcon()}
               <span className="weather-temp">{weather.temp}°C</span>
             </div>

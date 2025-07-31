@@ -4,7 +4,7 @@
   grid-template-columns: repeat(4, minmax(220px, 1fr));
   gap: 16px;
   padding: 16px;
-  max-width: 1800px;
+  max-width: 1900px;
   margin: 0 auto;
   overflow-x: auto;
   scrollbar-width: none; /* Pour Firefox */
@@ -57,7 +57,7 @@
 }
 
 .widget-icon {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--light-primary);
 }
 
@@ -69,7 +69,7 @@
 .bio-content p {
   margin-bottom: 12px;
   line-height: 1.5;
-  font-size: 14px;
+  font-size: 17px;
   color: var(--light-text);
 }
 
@@ -87,7 +87,7 @@
 .detail-item {
   display: flex;
   gap: 6px;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .detail-label {
@@ -104,7 +104,7 @@
   font-style: italic;
   margin-bottom: 12px;
   line-height: 1.5;
-  font-size: 14px;
+  font-size: 17px;
   color: var(--light-text);
 }
 
@@ -113,7 +113,7 @@
 }
 
 .thought-time {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--light-primary);
   text-align: right;
   margin-top: auto;
@@ -194,7 +194,7 @@
   color: #E1306C;
 }
 
-/* Ajouts pour la météo et le texte "Follow me" */
+/* Météo et le texte "Follow me" */
 .weather-info {
   display: flex;
   align-items: center;
@@ -226,16 +226,16 @@
 
 .weather-temp {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .weather-location {
-  font-size: 13px;
+  font-size: 16px;
   opacity: 0.8;
 }
 
 .follow-text {
-  font-size: 13px;
+  font-size: 17px;
   margin-bottom: 10px;
   color: var(--light-text);
   text-align: center;
@@ -256,7 +256,7 @@
   text-align: center;
   margin-bottom: 12px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 17px;
   color: var(--light-text);
 }
 

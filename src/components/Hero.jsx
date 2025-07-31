@@ -10,10 +10,10 @@ const Hero = () => {
             <h1>Hi, I'am <span>Serge</span></h1>
             <h2>Développeur Fullstack</h2>
             <p className="lead">
-              Etudiant en Licence 2 Informatique à Sup'Info Senegal, 
-              je suis passionné par le développement web et mobile. 
-              J'aime créer des applications performantes et intuitives 
-              qui répondent aux besoins des utilisateurs.
+              Second-year Computer Science student at Sup'Info Senegal, 
+              I am passionate about web and mobile development. I enjoy 
+              creating high-performance and intuitive applications that 
+              meet users' needs.
             </p>
             <div className="hero-cta">
               <a href="#contact" className="btn btn-primary">Me contacter</a>
