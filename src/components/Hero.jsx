@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1>Hi, I'am <span>Serge</span></h1>
-            <h2>Développeur Fullstack</h2>
+            <h2>Software Engineer</h2>
             <p className="lead">
               Second-year Computer Science student at Sup'Info Senegal, 
               I am passionate about web and mobile development. I enjoy 

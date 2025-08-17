@@ -18,14 +18,14 @@ const Footer = () => {
               <ul>
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#projets">Projets</a></li>
-                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#competences">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
             </nav>
           </div>
 
           <div className="footer-social">
-            <h4 className="footer-title">Réseaux</h4>
+            <h4 className="footer-title">Networks</h4>
             <div className="social-links">
               <a href="https://github.com/Lutsun" aria-label="GitHub"><FaGithub /></a>
               <a href="mailto:sergedasylva0411@gmail.com" aria-label="Email"><FiMail /></a>
