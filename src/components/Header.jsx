@@ -45,7 +45,7 @@ const Header = ({ darkMode, setDarkMode }) => {
           <nav className="nav">
             <a href="#home">Home</a>
             <a href="#skills">Skills</a>
-            <a href="#projects">Projets</a>
+            <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
             
             <button onClick={toggleDarkMode} className="theme-toggle">

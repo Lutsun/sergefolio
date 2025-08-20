@@ -16,9 +16,9 @@ const Footer = () => {
             <h4 className="footer-title">Navigation</h4>
             <nav>
               <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#competences">Skills</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
             </nav>
