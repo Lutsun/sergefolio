@@ -200,7 +200,7 @@ const WidgetsPanel = () => {
           <h3>DAILY THOUGHT</h3>
         </div>
         <div className="thought-content">
-          <p>"{dailyThoughts[new Date().getDay()]}"
+          <p>"{currentThought}"
               <br />
               <br />
               <br />
