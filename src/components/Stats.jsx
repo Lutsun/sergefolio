@@ -3,10 +3,10 @@ import "../styles/stats.css";
 
 const Stats = () => {
   const stats = [
-    { value: 2, label: "Années d'expérience" },
-    { value: 5, label: "Projets réalisés" },
-    { value: 8, label: "Technologies maîtrisées" },
-    { value: 100, label: "Satisfaction client" }
+    { value: 2, label: "years of experience" },
+    { value: 5, label: "completed projects" },
+    { value: 8, label: "Technologies mastered" },
+    { value: 100, label: "customer Satisfaction " }
   ];
 
   const [animatedValues, setAnimatedValues] = useState(stats.map(() => 0));

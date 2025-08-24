@@ -16,8 +16,8 @@ const Hero = () => {
               meet users' needs.
             </p>
             <div className="hero-cta">
-              <a href="#contact" className="btn btn-primary">Me contacter</a>
-              <a href="/cv.pdf" download className="btn btn-outline">Télécharger mon CV</a>
+              <a href="#contact" className="btn btn-primary">Contact Me</a>
+              <a href="/cv.pdf" download className="btn btn-outline">Hire Me</a>
             </div>
           </div>
           <div className="hero-image">
