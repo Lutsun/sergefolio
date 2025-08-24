@@ -41,7 +41,7 @@ const Header = ({ darkMode, setDarkMode }) => {
             SERGE<span>VERSE</span>
           </a>
           
-          {/* Navigation Desktop - inchangée */}
+          {/* Navigation Desktop */}
           <nav className="nav">
             <a href="#home">Home</a>
             <a href="#skills">Skills</a>
