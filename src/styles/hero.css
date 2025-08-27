@@ -170,3 +170,38 @@
     height: 200px;
   }
 }
+
+/* Dans hero.css - Ajouter */
+@media (max-width: 480px) {
+  .hero-content {
+    gap: 1.5rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero h2 {
+    font-size: 1.1rem;
+  }
+  
+  .lead {
+    font-size: 0.95rem;
+  }
+  
+  .img-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+  }
+}

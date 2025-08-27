@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiMoon, FiSun, FiMenu, FiX, FiHome, FiUser, FiCode, FiMail } from 'react-icons/fi';
 import '../styles/header.css';
 
 const Header = ({ darkMode, setDarkMode }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(false);
 
-  React.useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-      if (window.innerWidth > 768) {
-        setMobileMenuOpen(false);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    
+    // Vérifier au montage
+    checkMobile();
+    
+    // Écouter les changements de taille
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
@@ -25,24 +24,13 @@ const Header = ({ darkMode, setDarkMode }) => {
     <header className="header">
       <div className="container">
         <div className="header-content">
-          {/* Bouton Hamburger (mobile seulement) */}
-          {isMobile && (
-            <button 
-              className="mobile-menu-btn" 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <FiX className="menu-icon" /> : <FiMenu className="menu-icon" />}
-            </button>
-          )}
-
-          {/* Logo centré sur mobile, normal sur desktop */}
-          <a href="/" className={`logo ${isMobile ? 'mobile-logo' : ''}`}>
+          {/* Logo */}
+          <a href="/" className="logo">
             SERGE<span>VERSE</span>
           </a>
           
           {/* Navigation Desktop */}
-          <nav className="nav">
+          <nav className={`nav ${isMobile ? 'mobile-hidden' : ''}`}>
             <a href="#home">Home</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
@@ -52,50 +40,43 @@ const Header = ({ darkMode, setDarkMode }) => {
               {darkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
             </button>
           </nav>
+
+          {/* Bouton Hamburger (mobile seulement) */}
+          {isMobile && (
+            <button 
+              className="mobile-menu-btn" 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            </button>
+          )}
         </div>
       </div>
 
-      {/* Sidebar Mobile (mobile seulement) */}
-      {isMobile && (
-        <>
-          <div className={`mobile-sidebar ${mobileMenuOpen ? 'open' : ''}`}>
-            <div className="sidebar-nav">
-              <a href="#home" onClick={closeMobileMenu}>
-                <FiHome className="nav-icon" />
-                <span>Home</span>
-              </a>
-              <a href="#skills" onClick={closeMobileMenu}>
-                <FiUser className="nav-icon" />
-                <span>Skills</span>
-              </a>
-              <a href="#projects" onClick={closeMobileMenu}>
-                <FiCode className="nav-icon" />
-                <span>Projets</span>
-              </a>
-              <a href="#contact" onClick={closeMobileMenu}>
-                <FiMail className="nav-icon" />
-                <span>Contact</span>
-              </a>
-            </div>
+      {/* Menu mobile */}
+      {isMobile && mobileMenuOpen && (
+        <div className="mobile-menu">
+          <nav className="mobile-nav">
+            <a href="#home" onClick={closeMobileMenu}>
+              <FiHome /> Home
+            </a>
+            <a href="#skills" onClick={closeMobileMenu}>
+              <FiUser /> Skills
+            </a>
+            <a href="#projects" onClick={closeMobileMenu}>
+              <FiCode /> Projects
+            </a>
+            <a href="#contact" onClick={closeMobileMenu}>
+              <FiMail /> Contact
+            </a>
             
-            <button onClick={toggleDarkMode} className="sidebar-theme-toggle">
-              {darkMode ? (
-                <>
-                  <FiSun className="nav-icon" />
-                  <span>Light Mode</span>
-                </>
-              ) : (
-                <>
-                  <FiMoon className="nav-icon" />
-                  <span>Dark Mode</span>
-                </>
-              )}
+            <button onClick={toggleDarkMode} className="mobile-theme-toggle">
+              {darkMode ? <FiSun /> : <FiMoon />}
+              {darkMode ? ' Light Mode' : ' Dark Mode'}
             </button>
-          </div>
-
-          {/* Overlay (mobile seulement) */}
-          {mobileMenuOpen && <div className="sidebar-overlay" onClick={closeMobileMenu} />}
-        </>
+          </nav>
+        </div>
       )}
     </header>
   );

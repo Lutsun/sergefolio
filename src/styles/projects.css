@@ -293,3 +293,19 @@
     padding: 0.6rem 1.2rem;
   }
 }
+/* Dans projects.css */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .project-card {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  .carousel-btn, .carousel-dots {
+    display: none;
+  }
+}

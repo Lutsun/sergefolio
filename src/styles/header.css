@@ -1,4 +1,4 @@
-/* Styles Desktop existants - inchangés */
+/* Styles Desktop existants */
 .header {
   position: fixed;
   top: 0;
@@ -105,8 +105,6 @@
   color: var(--dark-accent);
 }
 
-
-/* ... (conservez tous vos styles desktop existants) ... */
 
 /* Styles Mobile seulement */
 @media (max-width: 768px) {
@@ -271,5 +269,82 @@
   
   .sidebar-nav {
     gap: 1.25rem;
+  }
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: var(--light-card);
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dark .mobile-menu {
+  background: var(--dark-card);
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--light-text);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.dark .mobile-nav a {
+  color: var(--dark-text);
+}
+
+.mobile-nav a:hover {
+  background: rgba(255, 0, 60, 0.1);
+}
+
+.mobile-theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: none;
+  border: none;
+  color: var(--light-text);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.dark .mobile-theme-toggle {
+  color: var(--dark-text);
+}
+
+.mobile-theme-toggle:hover {
+  background: rgba(255, 0, 60, 0.1);
+}
+
+/* Cache la nav desktop sur mobile */
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
+  }
+  
+  .header-content {
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
   }
 }
