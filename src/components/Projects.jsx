@@ -7,21 +7,21 @@ const projects = [
     description: "Modern and intuitive inventory management web application, developed in PHP.",
     tags: ["PHP", "PhpMyAdmin", "Framer Motion"],
     link: "https://github.com/Lutsun/Project_Php_Exam.git",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    image: "../assets/images/StockNova.JPG"
   },
   {
     title: "Portfolio React",
     description: "Portfolio moderne avec mode sombre/clair, animations et responsive design.",
     tags: ["React", "CSS3", "Framer Motion"],
     link: "https://github.com/username/portfolio-react",
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    image: "../assets/images/Sergeverse.JPG"
   },
   {
-    title: "API E-commerce",
-    description: "API RESTful pour plateforme e-commerce avec authentification JWT et paiements.",
-    tags: ["Node.js", "Express", "MongoDB"],
+    title: "File Backup & Integrity Checker",
+    description: "A Python application that allows you to verify the integrity of backups using SHA-256 checksums. ",
+    tags: ["Python", "Python Libraries"],
     link: "https://github.com/username/api-ecommerce",
-    image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
   },
   {
     title: "Employee Management",
