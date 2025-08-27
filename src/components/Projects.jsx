@@ -4,9 +4,9 @@ import '../styles/projects.css';
 const projects = [
   {
     title: "Stock Nova",
-    description: "Application complète de gestion de stock avec tableau de bord analytique et système d'alertes.",
-    tags: ["PHP", "PhpMyAdmin", "Bootstrap"],
-    link: "https://github.com/username/stock-nova",
+    description: "Modern and intuitive inventory management web application, developed in PHP.",
+    tags: ["PHP", "PhpMyAdmin", "Framer Motion"],
+    link: "https://github.com/Lutsun/Project_Php_Exam.git",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
   },
   {
@@ -21,6 +21,13 @@ const projects = [
     description: "API RESTful pour plateforme e-commerce avec authentification JWT et paiements.",
     tags: ["Node.js", "Express", "MongoDB"],
     link: "https://github.com/username/api-ecommerce",
+    image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+  },
+  {
+    title: "Employee Management",
+    description: "A simple Java desktop application to manage employees with a graphical interface.",
+    tags: ["Java", "Sqlite"],
+    link: "https://github.com/Lutsun/Project_Java_Exam.git",
     image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
   }
 ];

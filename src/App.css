@@ -1,8 +1,8 @@
 :root {
   /* Light Mode (version futuriste mais professionnelle) */
-  --light-bg: #f8f9fa;        /* Garde ton fond clair */
+  --light-bg: #f8f9fa;        /* fond clair */
   --light-text: #212529;      /* Texte sombre */
-  --light-primary: #ff003c;   /* Bleu foncé (peut rester) */
+  --light-primary: #ff003c;   /* rouge clair  */
   --light-secondary: #5e2750; /* Violet profond (nouveau) */
   --light-accent: #e63946;    /* Rouge vif mais lisible */
   --light-card: #ffffff;      /* Cartes blanches */
@@ -17,7 +17,6 @@
   --dark-card: #1a1a1a;       /* Cartes légèrement plus claires */
   --dark-neon-effect: rgba(255, 0, 60, 0.3); /* Glow rouge */
 
-  
   /* Commun */
   --border-radius: 8px;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
