@@ -20,7 +20,7 @@ const projects = [
     title: "File Backup & Integrity Checker",
     description: "A Python application that allows you to verify the integrity of backups using SHA-256 checksums. ",
     tags: ["Python", "Python Libraries"],
-    link: "https://github.com/username/api-ecommerce",
+    link: "https://github.com/Lutsun/Project_Python_exam.git",
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
   },
   {
