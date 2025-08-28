@@ -130,3 +130,200 @@ h3 { font-size: 1.5rem; }
   h1 { font-size: 2rem; }
   h2 { font-size: 1.75rem; }
 }
+
+/* ===== RESPONSIVE POUR TOUS LES SMARTPHONES ===== */
+
+/* iPhone X/11/12/13/14/15/16 Pro et Pro Max - Largeurs: 390px à 430px */
+@media (max-width: 430px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  section {
+    padding: 3rem 0;
+  }
+  
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  /* Header mobile */
+  .header {
+    padding: 1rem 0;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  /* Hero section */
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .img-container {
+    width: 220px !important;
+    height: 220px !important;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  /* Projects grid */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+  
+  .project-card {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  .carousel-btn, .carousel-dots {
+    display: none;
+  }
+  
+  /* Widgets panel */
+  .widget-panel {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .widget-card {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  /* Skills carousel */
+  .skills-track {
+    gap: 1rem;
+  }
+  
+  .skill-item {
+    min-width: 80px;
+    padding: 0.8rem 0.5rem;
+  }
+  
+  .skill-icon {
+    font-size: 1.8rem;
+  }
+  
+  .skill-name {
+    font-size: 0.8rem;
+  }
+}
+
+/* iPhone SE et petits Android - Largeurs: 320px à 374px */
+@media (max-width: 374px) {
+  .img-container {
+    width: 180px !important;
+    height: 180px !important;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  .hero h2 {
+    font-size: 1.1rem !important;
+  }
+  
+  .lead {
+    font-size: 0.9rem;
+  }
+  
+  .skill-item {
+    min-width: 70px;
+    padding: 0.6rem 0.3rem;
+  }
+  
+  .skill-icon {
+    font-size: 1.5rem;
+  }
+  
+  .skill-name {
+    font-size: 0.75rem;
+  }
+}
+
+/* Samsung Galaxy Fold et très petits écrans - 280px */
+@media (max-width: 280px) {
+  .img-container {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  
+  .hero h1 {
+    font-size: 1.6rem !important;
+  }
+  
+  .container {
+    padding: 0 0.5rem;
+  }
+  
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== CORRECTIONS SPÉCIFIQUES POUR SAFARI iOS ===== */
+@supports (-webkit-touch-callout: none) {
+  /* Fix pour la hauteur viewport sur iOS */
+  .app {
+    min-height: -webkit-fill-available;
+  }
+  
+  /* Fix pour les boutons sur iOS */
+  button, .btn {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Améliore le scrolling sur iOS */
+  .skills-container {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ===== ORIENTATION PAYSAGE ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    padding: 4rem 0;
+  }
+  
+  .img-container {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  
+  .hero-content {
+    gap: 1rem;
+  }
+}
+
+/* ===== HAUTE DÉFINITION (Retina displays) ===== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .profile-img,
+  .project-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+

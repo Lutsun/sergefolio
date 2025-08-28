@@ -1,21 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FiMoon, FiSun, FiMenu, FiX, FiHome, FiUser, FiCode, FiMail } from 'react-icons/fi';
 import '../styles/header.css';
 
 const Header = ({ darkMode, setDarkMode }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    
-    // Vérifier au montage
-    checkMobile();
-    
-    // Écouter les changements de taille
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
   const closeMobileMenu = () => setMobileMenuOpen(false);
@@ -24,13 +12,13 @@ const Header = ({ darkMode, setDarkMode }) => {
     <header className="header">
       <div className="container">
         <div className="header-content">
-          {/* Logo */}
+          {/* Logo - inchangé sur desktop */}
           <a href="/" className="logo">
             SERGE<span>VERSE</span>
           </a>
           
-          {/* Navigation Desktop */}
-          <nav className={`nav ${isMobile ? 'mobile-hidden' : ''}`}>
+          {/* Navigation Desktop - inchangée */}
+          <nav className="nav">
             <a href="#home">Home</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
@@ -42,20 +30,18 @@ const Header = ({ darkMode, setDarkMode }) => {
           </nav>
 
           {/* Bouton Hamburger (mobile seulement) */}
-          {isMobile && (
-            <button 
-              className="mobile-menu-btn" 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-            </button>
-          )}
+          <button 
+            className="mobile-menu-btn" 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Ouvrir le menu"
+          >
+            {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
         </div>
       </div>
 
-      {/* Menu mobile */}
-      {isMobile && mobileMenuOpen && (
+      {/* Menu mobile (mobile seulement) */}
+      {mobileMenuOpen && (
         <div className="mobile-menu">
           <nav className="mobile-nav">
             <a href="#home" onClick={closeMobileMenu}>
