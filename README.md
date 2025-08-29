@@ -110,7 +110,7 @@ Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de
 
 ### ⭐️ Si tu aimes le projet, n'hésite pas à mettre une star !
 
-**✨ Développé avec passion par Serge ✨**
+**✨ Développé avec passion par Serge Da Sylva✨**
 
 </div>
 ```
