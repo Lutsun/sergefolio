@@ -23,17 +23,17 @@
   font-weight: 700;
   color: white;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em; /* Réduit l'espacement */
   margin-bottom: 2rem;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
   line-height: 1.2;
+  white-space: nowrap; /* Empêche le retour à la ligne */
 }
 
 .cyber-accent {
   color: #ff003c;
   text-shadow: 0 0 15px #ff003c;
   display: inline-block;
-  margin-left: 0.1em;
 }
 
 .cyber-btn {
@@ -75,16 +75,53 @@
   box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
 }
 
-@media (max-width: 768px) {
+/* ===== RESPONSIVE POUR IPHONE ===== */
+@media (max-width: 430px) {
   .cyber-title {
-    font-size: 1.8rem;
-    letter-spacing: 0.15em;
-    margin-bottom: 1.5rem;
+    font-size: 2.2rem; /* Taille légèrement réduite */
+    letter-spacing: 0.05em; /* Espacement encore réduit */
   }
   
   .cyber-btn {
-    padding: 0.7rem 1.5rem;
-    font-size: 0.8rem;
+    padding: 0.7rem 1.8rem;
+    font-size: 0.85rem;
     letter-spacing: 0.15em;
+  }
+}
+
+/* Pour les très petits écrans (iPhone SE) */
+@media (max-width: 375px) {
+  .cyber-title {
+    font-size: 2rem;
+    letter-spacing: 0.03em;
+  }
+  
+  .cyber-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Pour les écrans extrêmement petits */
+@media (max-width: 320px) {
+  .cyber-title {
+    font-size: 1.8rem;
+    letter-spacing: 0.02em;
+  }
+  
+  .cyber-content {
+    padding: 0 15px;
+  }
+}
+
+/* Orientation paysage sur mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .cyber-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cyber-content {
+    transform: scale(0.9);
   }
 }

@@ -25,6 +25,7 @@ const WelcomeScreen = ({ onEnter }) => {
       sergeLetters.push(span);
     }
 
+
     // Create VERSE letters with red accent
     const verseText = "VERSE";
     const verseLetters = [];
@@ -54,7 +55,7 @@ const WelcomeScreen = ({ onEnter }) => {
       duration: 0.8,
       opacity: 1,
       y: 0,
-      stagger: 0.05,
+      stagger: 0.6,
       ease: "power3.out",
       delay: sergeText.length * 0.05 + 0.1
     });
