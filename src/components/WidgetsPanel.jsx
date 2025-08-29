@@ -45,13 +45,13 @@ const WidgetsPanel = () => {
     setCurrentThought(dailyThoughts[newIndex]);
   };
 
-  // Fetch weather data (à remplacer par ton appel API réel)
+  // Fetch weather data 
   useEffect(() => {
     const fetchWeather = async () => {
       try {
         
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=Dakar,SN&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
+          `https://api.openweathermap.org/data/2.5/weather?q=Dakar,SN&units=metric&appid=25662924f4d0193b20a831fdfd92a6cf`
         );
         const data = await response.json();
         
