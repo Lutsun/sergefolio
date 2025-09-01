@@ -14,7 +14,7 @@
 
 ## ✨ À propos
 
-Sergeverse est mon portfolio personnel présentant mes compétences en développement web. Il features un design cyberpunk avec des animations fluides et une expérience utilisateur optimisée.
+Sergeverse est mon portfolio personnel présentant mes compétences en développement web. Il dispose d'un design cyberpunk avec des animations fluides et une expérience utilisateur optimisée.
 
 ## 🎨 Features
 
