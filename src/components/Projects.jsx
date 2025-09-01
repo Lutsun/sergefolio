@@ -13,7 +13,7 @@ const projects = [
     title: "Portfolio React",
     description: "My Sergeverse Portfolio with dark/light mode, animations and responsive design.",
     tags: ["React", "CSS3", "Framer Motion"],
-    link: "https://github.com/username/portfolio-react",
+    link: "https://github.com/Lutsun/sergefolio.git",
     image: "../assets/images/Sergeverse.JPG"
   },
   {
