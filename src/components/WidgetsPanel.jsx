@@ -241,21 +241,25 @@ const WidgetsPanel = () => {
               <FiMail className="social-icon" />
               <span>Gmail</span>
             </a>
-            <a href="https://x.com/sylva_serge" className="social-item twitter">
-              <FaTwitter className="social-icon" />
-              <span>Twitter</span>
+            <a href="https://www.linkedin.com/in/serge-da-sylva-8ab451382/?trk=opento_sprofile_topcard" className="social-item linkedin">
+              <FaLinkedinIn className="social-icon" />
+              <span>Linkedin</span>
             </a>
-            <a href="https://discord.com/users/1400134466701103245" className="social-item discord">
-              <FaDiscord className="social-icon" />
-              <span>Discord</span>
-            </a>
-            <a href="https://github.com/Lutsun" className="social-item github">
+             <a href="https://github.com/Lutsun" className="social-item github">
               <FaGithub className="social-icon" />
               <span>GitHub</span>
+            </a>
+              <a href="https://discord.com/users/1400134466701103245" className="social-item discord">
+              <FaDiscord className="social-icon" />
+              <span>Discord</span>
             </a>
             <a href="https://www.instagram.com/s04.da/?next=%2F" className="social-item instagram">
               <FaInstagram className="social-icon" />
               <span>Instagram</span>
+            </a>
+            <a href="https://x.com/sylva_serge" className="social-item twitter">
+              <FaTwitter className="social-icon" />
+              <span>Twitter</span>
             </a>
           </div>
         </div>
