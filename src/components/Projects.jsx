@@ -47,8 +47,8 @@ const Projects = () => {
     <section id="projects" className="projects">
       <div className="container">
         <div className="section-header">
-          <h2>Mes Projets</h2>
-          <p className="section-subtitle">Explorez mes projets phares et contributions techniques</p>
+          <h2>My Projects</h2>
+          <p className="section-subtitle">Explore my flagship projects and technical contributions</p>
         </div>
 
         <div className="projects-carousel">
