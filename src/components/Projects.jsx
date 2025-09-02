@@ -86,7 +86,7 @@ const Projects = () => {
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
-                    Voir sur GitHub
+                    See on GitHub
                     <span className="link-icon">↗</span>
                   </a>
                 </div>
