@@ -237,7 +237,7 @@ const WidgetsPanel = () => {
         <div className="social-content">
           <p className="follow-text">Follow me here !</p>
           <div className="social-grid">
-             <a href="mailto:sergedasylva0411@gmail.com" className="social-item mail">
+             <a href="mailto:contact@dasylva.dev" className="social-item mail">
               <FiMail className="social-icon" />
               <span>Gmail</span>
             </a>
