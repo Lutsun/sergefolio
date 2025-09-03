@@ -28,7 +28,7 @@ const Footer = () => {
             <h4 className="footer-title">Networks</h4>
             <div className="social-links">
               <a href="https://github.com/Lutsun" aria-label="GitHub"><FaGithub /></a>
-              <a href="mailto:sergedasylva0411@gmail.com" aria-label="Email"><FiMail /></a>
+              <a href="mailto:contact@dasylva.dev" aria-label="Email"><FiMail /></a>
               <a href="https://discord.com/users/1400134466701103245" aria-label="Discord"><FaDiscord /></a>
             </div>
           </div>
