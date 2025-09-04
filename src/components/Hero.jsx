@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/hero.css';
+import { track } from "@vercel/analytics/react";
 
 const Hero = () => {
   return (
@@ -16,8 +17,8 @@ const Hero = () => {
               meet users' needs.
             </p>
             <div className="hero-cta">
-              <a href="#contact" className="btn btn-primary">Contact Me</a>
-              <a href="/Serge_Dasylva_CV.pdf" download className="btn btn-outline">Hire Me</a>
+              <a href="#contact" className="btn btn-primary" onClick={() => track("contact_button_click")}>Contact Me</a>
+              <a href="/Serge_Dasylva_CV.pdf" download className="btn btn-outline" onClick={() => track("cv_download")}>Hire Me</a>
             </div>
           </div>
           <div className="hero-image">
