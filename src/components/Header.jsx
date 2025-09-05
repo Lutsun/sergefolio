@@ -1,12 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FiMoon, FiSun, FiMenu, FiX, FiHome, FiUser, FiCode, FiMail } from 'react-icons/fi';
 import '../styles/header.css';
 
 const Header = ({ darkMode, setDarkMode }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const mobileMenuRef = useRef(null);
+  const menuButtonRef = useRef(null);
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
   const closeMobileMenu = () => setMobileMenuOpen(false);
+
+  // Fermer le menu quand on clique à l'extérieur
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Si le menu est ouvert ET que le clic est à l'extérieur du menu ET pas sur le bouton menu
+      if (
+        mobileMenuOpen &&
+        mobileMenuRef.current && 
+        !mobileMenuRef.current.contains(event.target) &&
+        menuButtonRef.current &&
+        !menuButtonRef.current.contains(event.target)
+      ) {
+        closeMobileMenu();
+      }
+    };
+
+    // Ajouter l'écouteur d'événement
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside); // Pour mobile
+
+    // Nettoyer l'écouteur
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <header className="header">
@@ -31,6 +59,7 @@ const Header = ({ darkMode, setDarkMode }) => {
 
           {/* Bouton Hamburger (mobile seulement) */}
           <button 
+            ref={menuButtonRef}
             className="mobile-menu-btn" 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Ouvrir le menu"
@@ -42,7 +71,7 @@ const Header = ({ darkMode, setDarkMode }) => {
 
       {/* Menu mobile (mobile seulement) */}
       {mobileMenuOpen && (
-        <div className="mobile-menu">
+        <div className="mobile-menu" ref={mobileMenuRef}>
           <nav className="mobile-nav">
             <a href="#home" onClick={closeMobileMenu}>
               <FiHome /> Home
