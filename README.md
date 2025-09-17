@@ -34,7 +34,7 @@ Sergeverse est mon portfolio personnel présentant mes compétences en développ
 | 🏠 React Router  | 📱 Media Queries | 🚀 Vite         |
 
 ## 📸 Preview
-See on my website dasylva.dev ⚡
+Go to see on my website: dasylva.dev ⚡
 
 ## 🚀 Installation
 
